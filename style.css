@@ -1,0 +1,224 @@
+  /* --- CSS Variables & Reset --- */
+        :root {
+            --color-text-primary: #111827;
+            --color-text-secondary: #4B5563;
+            --color-text-light: #9CA3AF;
+            --color-bg-badge: rgba(255, 255, 255, 0.25);
+            --color-badge-border: rgba(255, 255, 255, 0.3);
+            --font-family: 'Inter', sans-serif;
+            --spacing-container: 120px;
+            --spacing-card-gap: 32px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: #ffffff;
+            color: var(--color-text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+        }
+
+        /* --- Layout Containers --- */
+        .blog-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Header Styling --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 600;
+            color: #000;
+            letter-spacing: -1.5px;
+        }
+
+        /* --- Grid Layout --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-card-gap);
+            width: 100%;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        /* --- Blog Card Component --- */
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            border-radius: 0;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        /* Image Area */
+        .card-media-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 62%; /* Aspect Ratio approx 16:10 */
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Glassmorphism Badge */
+        .card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: var(--color-bg-badge);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            z-index: 2;
+        }
+
+        /* Content Area */
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #111;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-title:hover {
+            color: #ff9808;
+        }
+
+        /* Footer / Meta Area */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 0;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #444;
+            text-transform: uppercase;
+        }
+        
+        /* Helper class for different name styling in the image (some uppercase, some capitalized) */
+
+        .post-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .post-date {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Animated Stats Styles */
+        .post-stats {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-text-light);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0;
+            transform: translateY(5px);
+            animation: fadeUp 0.6s forwards 0.5s;
+        }
+        
+        .stat-number {
+            color: #000;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
