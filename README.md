@@ -12,6 +12,10 @@ A modern, animated blog section component built with pure HTML, CSS, and JavaScr
 - **Accessibility Ready**: Semantic HTML and proper contrast ratios
 - **Easy Customization**: Well-structured CSS variables for quick theming
 
+## Live Demo
+
+https://thisislefa.github.io/bloggrid-pro
+
 ## Tech Stack
 
 - **HTML5** - Semantic markup with clean structure
@@ -23,7 +27,7 @@ A modern, animated blog section component built with pure HTML, CSS, and JavaScr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/bloggrid-pro.git
+   git clone https://github.com/thisislefa/bloggrid-pro.git
 
 
 ## LICENSE (MIT License)
@@ -49,3 +53,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
